@@ -70,13 +70,15 @@ function backUp($serverConnection){
     $curranteLastID=getAllEmps($serverConnection) + 1;
     // print($lastCopyedID);
     // print($curranteLastID);
-    for($i=$lastCopyedID; $i<=$curranteLastID; $i++){
 
+    for($i=$lastCopyedID; $i<=$curranteLastID; $i++){
         $qurey="INSERT INTO employee_copy
         SELECT * FROM employee WHERE employee_id = $i";
         $result = $serverConnection->query($qurey) ;
         print("<br/>employe data with id: ".$i." bcakuped...");
     }
+    //optionally send email contante the number of backuped data
+    mail("amen.pj@protonmail.com","daly backup","number of backuped rows: ". $curranteLastID - $lastCopyedID);
 }
 
 $conn->close();

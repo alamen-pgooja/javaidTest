@@ -77,6 +77,10 @@ function backUp($serverConnection){
         $result = $serverConnection->query($qurey) ;
         print("<br/>Assignment row with id: ".$i." bcakuped...");
     }
+
+    //optionally send email contante the number of backuped data for today
+    mail("amen.pj@protonmail.com","daly backup","number of backuped rows: ". $curranteLastID - $lastCopyedID);
+
 }
 $conn->close();
 ?>
