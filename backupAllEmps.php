@@ -3,6 +3,7 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "company";
+ //this script well run every 5 h
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
