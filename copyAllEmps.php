@@ -18,13 +18,9 @@ $values = $_POST['values'];
 // values POSTed as json object string 
 $decodedText = html_entity_decode($values);
 $empArray = json_decode($values, true);
-
-
 $size=sizeof($empArray);
-
 // loop over json object
 for($i=0;$i<$size;$i++){
-    
     // insert query
     $sql = "INSERT INTO employee_copy (
         employee_id, 
